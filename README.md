@@ -21,7 +21,7 @@ A webring for FartLabs members and friends. Hand-crafted sites welcome.
 
 ## Member Sites
 
-Visit [webring.fartlabs.com](https://webring.fartlabs.com) to browse the ring.
+Visit [webring.fartlabs.org](https://webring.fartlabs.org) to browse the ring.
 
 ---
 
