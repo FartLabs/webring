@@ -5,11 +5,9 @@ A webring for FartLabs members and friends. Hand-crafted sites welcome.
 ## Join the Webring
 
 1. Fork this repo
-2. Edit `index.html` and add yourself to the `<ol id="icons">` list:
-   ```html
-   <li data-lang="en" id="your-handle">
-       <a href="https://your-site.com">your-name</a>
-   </li>
+2. Edit `webring.json` and add yourself to the `sites` list:
+   ```json
+   { "name": "your-name", "link": "your-site.com" }
    ```
 3. Submit a pull request
 

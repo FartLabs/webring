@@ -1,6 +1,7 @@
 {
   "ring": "etok",
   "sites": [
-    { "name": "etok", "link": "etok.me" }
+    { "name": "etok", "link": "etok.me" },
+    { "name": "john", "link": "johncarlomanuel.com" }
   ]
 }
