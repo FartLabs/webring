@@ -11,8 +11,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: diamondburned/libwebring/.github/actions/health-check@v0.2.0
-        with:
-          webring-input: webring.json
-          commit: true
-          commit-message: "Update webring status"
+      - name: Check site health
+        run: node scripts/health-check.js
