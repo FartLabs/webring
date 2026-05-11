@@ -5,8 +5,40 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" href="https://fartlabs.org/favicon.ico">
 		<title>etok webring</title>
-		<script src="https://cdn.jsdelivr.net/gh/diamondburned/libwebring@nightly/dist/webring-element.js" type="module"></script>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/diamondburned/libwebring@nightly/dist/webring.css">
+		<script type="module">
+			async function redirect() {
+				const params = new URLSearchParams(window.location.search);
+				const from = params.get('from');
+				const dir = params.get('dir');
+				
+				if (!from || !dir) return;
+
+				try {
+					const response = await fetch('/webring.json');
+					const data = await response.json();
+					const sites = data.sites;
+
+					const index = sites.findIndex(s => s.name.toLowerCase() === from.toLowerCase());
+					if (index === -1) return;
+
+					let targetIndex;
+					if (dir === 'next') {
+						targetIndex = (index + 1) % sites.length;
+					} else if (dir === 'prev') {
+						targetIndex = (index - 1 + sites.length) % sites.length;
+					} else {
+						return;
+					}
+
+					const target = sites[targetIndex];
+					const url = target.link.includes('://') ? target.link : `https://${target.link}`;
+					window.location.replace(url);
+				} catch (e) {
+					console.error('Webring redirect failed:', e);
+				}
+			}
+			redirect();
+		</script>
 		<style>
 			:root { --color-alpha: white; --color-beta: black; }
 			body { padding: 0; margin: 0 0 0 0; background-color: var(--color-alpha); color: var(--color-beta); font-family: serif; max-width: 900px; line-height: 1.6; }
@@ -29,7 +61,6 @@
 		</style>
 	</head>
 	<body>
-		<webring-element name="etok" src="/webring.json"></webring-element>
 		<ol id="icons">
 <!-- members-start -->
 			<li data-lang="en" id="etok">
