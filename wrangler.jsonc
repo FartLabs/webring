@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fartlabs-webring",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "."
+  },
+  "routes": [
+    { "pattern": "webring.fartlabs.org", "custom_domain": true }
+  ]
+}
