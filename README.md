@@ -5,7 +5,7 @@ A webring for FartLabs members and friends. Hand-crafted sites welcome.
 ## Join the Webring
 
 1. Fork this repo
-2. Edit `webring.json` and add yourself to the `sites` list:
+2. Edit `webring.json` and add yourself to the `ring` list:
    ```json
    { "name": "your-name", "link": "your-site.com" }
    ```

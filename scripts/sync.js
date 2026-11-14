@@ -8,7 +8,7 @@ function sync() {
     const webring = JSON.parse(fs.readFileSync(webringPath, 'utf8'));
     let index = fs.readFileSync(indexPath, 'utf8');
 
-    const memberList = webring.sites.map(site => {
+    const memberList = webring.ring.map(site => {
         const id = site.name.toLowerCase().replace(/\s+/g, '-');
         const url = site.link.includes('://') ? site.link : `https://${site.link}`;
         return `\t\t\t<li data-lang="en" id="${id}">\n\t\t\t\t<a href="${url}">${site.name}</a>\n\t\t\t</li>`;

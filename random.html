@@ -21,7 +21,7 @@
 			fetch('/webring.json')
 				.then(r => r.json())
 				.then(data => {
-					const sites = data.sites.map(s => s.link);
+					const sites = data.ring.map(s => s.link);
 					const random = sites[Math.floor(Math.random() * sites.length)];
 					const url = random.includes('://') ? random : `https://${random}`;
 					window.location.replace(url);

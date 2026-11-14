@@ -27,7 +27,7 @@ function checkSite(site) {
 
 async function healthCheck() {
     const webring = JSON.parse(fs.readFileSync(webringPath, 'utf8'));
-    const results = await Promise.all(webring.sites.map(checkSite));
+    const results = await Promise.all(webring.ring.map(checkSite));
     
     const failures = results.filter(r => !r.ok);
     
