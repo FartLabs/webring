@@ -16,7 +16,7 @@
 				try {
 					const response = await fetch('/webring.json');
 					const data = await response.json();
-					const sites = data.sites;
+					const sites = data.ring;
 
 					const index = sites.findIndex(s => s.name.toLowerCase() === from.toLowerCase());
 					if (index === -1) return;
