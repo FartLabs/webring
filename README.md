@@ -11,6 +11,11 @@ A webring for FartLabs members and friends. Hand-crafted sites welcome.
    ```
 3. Submit a pull request
 
+## Deploys
+
+Pushes to `main` deploy automatically via Cloudflare Workers Builds
+(`node scripts/sync.js`, then `wrangler deploy`).
+
 ## Rules
 
 - Hand-crafted wikis, portfolios, and personal sites only
